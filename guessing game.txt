@@ -1,0 +1,56 @@
+import time 
+import random
+name1=input("Enter player 1")
+name2=input("Enter player 2")
+print("Hello{} and {}".format(name1,name2))
+print("Comp has fixed five integers in mind")
+print("You both have 3 choices each to guess")
+nums=[]
+while(len(nums)!=5):
+    d=random.randint(1,10)
+    if(d in nums):
+      continue
+    else:
+        nums.append(d)
+
+player1=[]
+player2=[]
+s1= 0
+s2= 0 
+for i in range (3):
+    print("{} Enter your guess".format(name1))
+    ans1=int(input())
+    while(ans1 in player1 or ans1 in player2):
+        ans1=int(input("Enter again"))
+    player1.append(ans1)
+    if (ans1 in nums):
+        print("Correct")
+        s1=s1+1 
+    else:
+        print("Wrong")
+            
+    print("{} Enter your guess".format(name2))
+    ans2=int(input())
+    while(ans2 in player1 or ans2 in player2):
+        ans2=int(input("Enter again"))
+    player2.append(ans2)
+    if (ans2 in nums):
+        print("Correct")
+        s2=s2+1 
+    else:
+        print("Wrong")
+        
+time.sleep(2)
+print("Let us have summary")
+print("Comp has ",nums)
+print("{} predicted{}".format(name1,player1))
+print("{} score{}".format(name1,s1))
+print("{} predicted{}".format(name2,player2))
+print("{} score{}".format(name2,s2))
+if(s1>s2):
+    print("{} is winner".format (name1))
+if(s2>s1):
+    print("{} is winner".format (name2))
+if(s1==s2):
+    print("{} is draw".format (name1,name2))
+        
