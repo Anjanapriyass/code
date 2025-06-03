@@ -1,0 +1,47 @@
+def circle():
+    c = int(input("Enter radius of circle: "))
+    print("Area of circle is", 3.14 * c * c)
+
+def rectangle(a, b):
+    print("Area of rectangle is", a * b)
+
+def triangle():
+    b = int(input("Enter base: "))
+    h = int(input("Enter height: "))
+    return 0.5 * b * h
+
+def square(a):
+    return a * a
+
+while True:
+    print("1. CIRCLE")
+    print("2. RECTANGLE") 
+    print("3. TRIANGLE")
+    print("4. SQUARE")
+    print("5. EXIT")
+    
+    try:
+        d = int(input("Enter your choice: "))
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        continue
+
+    match d:
+        case 1:
+            circle()
+        case 2:
+            l = int(input("Enter the length of rectangle: "))
+            b = int(input("Enter the breadth of rectangle: "))
+            rectangle(l, b)
+        case 3:
+            res = triangle()
+            print("Area of triangle is:", res)
+        case 4:
+            a = int(input("Enter side of square: "))
+            res1 = square(a)
+            print("Area of square is:", res1)
+        case 5:
+            print("Exiting program...")
+            break
+        case _:
+            print("Invalid choice. Please select from 1 to 5.")
