@@ -1,0 +1,7 @@
+class Solution:
+    def plusOne(self, digits):
+        total = 0
+        for i in range(len(digits)):
+            total = total * 10 + digits[i]
+        total += 1
+        return [int(i) for i in str(total)]
